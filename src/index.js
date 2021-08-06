@@ -4,15 +4,25 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import {BrowserRouter, as Router, Route, Link, Switcher} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import Ryan from './Ryan';
+import NotFound from './NotFound';
+import Menu from './Menu';
+import Home from './Home';
+import Posts from './Posts';
+import About from './About';
 
 ReactDOM.render(
   <Router>
-    <Route path="/" component={App} />
-    
-  </Router>
-     
-  </Router>
+    <Menu />
+    <Switch>
+      <Route path='/' exact component={Home} />
+      <Route path='/Posts' component={Posts} />
+      <Route path='/About' component={About} />
+      <Route component={NotFound} />
+    </Switch>
+  </Router>,
+
   document.getElementById('root')
 );
 
