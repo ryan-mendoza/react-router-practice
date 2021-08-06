@@ -12,14 +12,20 @@ import Home from './Home';
 import Posts from './Posts';
 import About from './About';
 
+let hashHistory = Router.hashHistory;
+
 ReactDOM.render(
-  <Router>
+  <Router history={hashHistory}>
     <Menu />
     <Switch>
       <Route path='/' exact component={Home} />
-      <Route path='/Posts' component={Posts} />
+      <Route path='/:name' exact component={Home} />
+      {/* <Route path='/posts' exact component={Posts} /> */}
+      <Route path='/posts/:name/:msg' exact omponent={Posts} />
+      <Route path='/posts/:title/:msg/:callme' component={Posts} />
       <Route path='/About' component={About} />
-      <Route component={NotFound} />
+      <Route path='/Ryan' component={Ryan} />
+      {/* <Route component={NotFound} /> */}
     </Switch>
   </Router>,
 

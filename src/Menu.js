@@ -5,8 +5,8 @@ function Menu() {
   return (
     <div>
       <Link to='/'>Home</Link>
-      <Link to='/Posts'>Posts</Link>
-      <Link to='/About'>About</Link>
+      <Link to='/posts'>Posts</Link>
+      <Link to='/about'>About</Link>
     </div>
   );
 }
